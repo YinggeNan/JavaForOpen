@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ProductSeries defaultClass="cbf.cdb.data.ProductSeriesA">
+    <FieldGroup id="MessageHeader">
+        <Field sequence="1" length="1" name="filedA" dataType="string"/>
+        <Field sequence="1" length="1" name="filedB" dataType="string"/>
+        <Field sequence="3" length="2" name="filedC" dataType="string"/>
+        <Field sequence="4" length="3" name="filedD" dataType="string" offset="1"/>
+        <Field sequence="7" length="8" name="filedE" dataType="datetime" format="yyyyMMddHHmmss" dBFormat="yyyy-MM-dd HH:mm:ss"/>
+    </FieldGroup>
+    <Product name="Product1" category="C" type="I">
+        <FieldGroup sequence="0"  name="Header" referenceId="MessageHeader"/>
+    </Product>
+    <Product name="Product2" category="C" type="M">
+        <FieldGroup sequence="0" name="Header" referenceId="MessageHeader"/>
+        <FieldGroup sequence="1" name="Label">
+            <Field sequence="1" length="14" name="S1" dataType="string"/>
+            <Field sequence="2" length="09" name="c1" dataType="string"/>
+            <Field sequence="3" length="12" name="b1" dataType="string"/>
+            <Field sequence="4" length="05" name="p1" dataType="string" comment="sUB-Product type"/>
+        </FieldGroup>
+        <FieldGroup sequence="2" name="Label1">
+            <Field sequence="1" length="08" name="o1" dataType="datetime" format="yyyyMMdd" dBFormat="MM-dd-yyyy"/>
+        </FieldGroup>
+        <FieldGroup sequence="3" name="Label2">
+            <Field sequence="1" length="01" name="Q1" dataType="string"/>
+            <Field sequence="2" length="14" name="Q2" dataType="double"/>
+            <Field sequence="3" length="11" name="Q3" dataType="double?"/>
+            <Field sequence="4" length="01" name="Q4" dataType="string"/>
+            <Field sequence="5" length="01" name="Q5" dataType="string"/>
+            <Field sequence="6" length="01" name="Q6" dataType="string"/>
+            <Field sequence="7" length="01" name="Q7" dataType="string"/>
+            <Field sequence="8" length="14" name="Q8" dataType="datetime" format="yyyyMMMddHHmmss" dBFormat="yyyy-MM-dd HH:mm:ss"/>
+            <Field sequence="9" length="02" name="Q9" dataType="string"/>
+            <Field sequence="10" length="01" name="Q10" dataType="string" offset="2"/>
+        </FieldGroup>
+        <FieldGroup sequence="4" name="Label3">
+            <Field sequence="1" length="1" name="ChangeIndicator" dataType="int?"/>
+        </FieldGroup>
+    </Product>
+</ProductSeries>

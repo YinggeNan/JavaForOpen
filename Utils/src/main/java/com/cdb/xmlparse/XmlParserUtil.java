@@ -1,6 +1,6 @@
 package com.cdb.xmlparse;
 
-import com.cdb.xml_to_bean.ProductSeriesModel;
+import com.cdb.xmlparse.xml_to_bean.ProductSeriesModel;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 

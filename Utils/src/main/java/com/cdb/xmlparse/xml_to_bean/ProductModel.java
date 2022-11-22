@@ -1,4 +1,4 @@
-package com.cdb.xml_to_bean;
+package com.cdb.xmlparse.xml_to_bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

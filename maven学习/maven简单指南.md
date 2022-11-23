@@ -267,8 +267,36 @@ mvn clean
 3. 换句话说, SNAPSHOT 版本是最终“release”版本之前的“开发”版本, SNAPSHOT 比其发布版本“旧”
 4. 发布过程时, SNAPSHOT 版本号为 x.y-SNAPSHOT, 发布该版本, 则修改为 x.y,然后新的 SNAPSHOT 版本号就为 x.(y+1)-SNAPSHOT; 比如1.0-SNAPSHOT发布为1.0,新的开发版本就是1.1-SNAPSHOT
 ### 9.如何使用插件(plugins)
+1. 当想要自定义maven项目的构建过程时,就可以通过添加插件或修改已有插件的配置来实现
+2. 配置Java compiler编译JDK 5.0的代码的插件配置
+```
+...
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.3</version>
+      <configuration>
+        <source>1.5</source>
+        <target>1.5</target>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+...
+```
+#### 9.1 关于插件
+1. maven中的插件和依赖非常像,配置的插件将会自动下载和使用
+2. 可以配置要使用的插件的版本,默认会使用最新的版本
+3. 因为一个插件可能有多个goal, plugin标签内的configuration标签配置的参数会应用到插件的每个goal
+4. 可以给process添加新的goal或配置一个具体的goal,参考[构建生命周期介绍](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)  
+5. 对于一个特定的插件,如果要查找该插件有哪些配置可使用,请访问[Plugins List](https://maven.apache.org/plugins/) 
+6. 插件的参数配置的一般方法,参考[配置插件指南](https://maven.apache.org/guides/mini/guide-configuring-plugins.html) 
 ### 10.如何添加资源(resources)到JAR包中
+
 ### 11.如何过滤资源文件(filter resource files)
+
 ### 12.如何使用外部依赖（external dependencies)
 ### 13.如何部署jar包到远程仓库
 ### 14.如何创建应用的文档

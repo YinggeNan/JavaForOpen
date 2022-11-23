@@ -71,17 +71,17 @@
 ```
 
 #### 4.2 POM中包含的关键元素
-1. project: 所有maven的pom.xml的顶级元素(top-level)
-2. modelVersion： 指明这个pom文件使用的对象模型的版本, 对象模型版本很少更改,但是开发人员认为有必要时可以修改,为了确保使用的稳定性,这个元素是必选的
-3. groupId: 创建该项目的组织的唯一标识符,groupId是project的关键标识符之一,一般基于您组织的完全限定域名,比如org.apache.maven.plugins 是所有 Maven 插件的指定 groupId
-4. artifactId: 指明此项目生成的主要工件的唯一基本名称,项目生成的主要工件一般是JAR包,像源包(source bundles)这样的次要工件也使用 artifactId 作为它们最终名称的一部分,
+1. **project**: 所有maven的pom.xml的顶级元素(top-level)
+2. **modelVersion**: 指明这个pom文件使用的对象模型的版本, 对象模型版本很少更改,但是开发人员认为有必要时可以修改,为了确保使用的稳定性,这个元素是必选的
+3. **groupId**: 创建该项目的组织的唯一标识符,groupId是project的关键标识符之一,一般基于您组织的完全限定域名,比如org.apache.maven.plugins 是所有 Maven 插件的指定 groupId
+4. **artifactId**: 指明此项目生成的主要工件的唯一基本名称,项目生成的主要工件一般是JAR包,像源包(source bundles)这样的次要工件也使用 artifactId 作为它们最终名称的一部分,
 Maven 生成的典型工件的格式为 <artifactId>-<version>.<extension>（例如，myapp-1.0.jar）
-5. version: 表示项目生成的工件的版本,你经常会在版本中看到 SNAPSHOT 指示符，这表明项目处于开发状态
-6. name: 指示用于项目的显示名称, 在 Maven 生成的文档中经常使用
-7. url: 项目网站的位置, 这在 Maven 生成的文档中经常使用
-8. properties: 包含可在 POM 中的任何位置访问的值占位符
-9. dependencies: 该元素的子元素列出了依赖项
-10. build: 这个元素处理诸如声明项目的目录结构(directory structure)和管理插件之类的事情
+5. **version**: 表示项目生成的工件的版本,你经常会在版本中看到 SNAPSHOT 指示符，这表明项目处于开发状态
+6. **name**: 指示用于项目的显示名称, 在 Maven 生成的文档中经常使用
+7. **url**: 项目网站的位置, 这在 Maven 生成的文档中经常使用
+8. **properties**: 包含可在 POM 中的任何位置访问的值占位符
+9. **dependencies**: 该元素的子元素列出了依赖项
+10. **build**: 这个元素处理诸如声明项目的目录结构(directory structure)和管理插件之类的事情
 11. 查看[POM参考](https://maven.apache.org/ref/3.8.6/maven-model/maven.html)获取POM中可用的所有元素信息
 #### 4.3 项目的目录结构
 上面执行的命令会生成如下的目录结构
@@ -102,8 +102,9 @@ my-app
                     `-- app
                         `-- AppTest.java
 ```
-上图表示,这个原型结构有一个pom.xml文件和一个应用资源树结构、测试资源树结构,这是maven项目的标准布局( standard layout),即应用资源在目录${basedir}/src/main/java, 测试资源在${basedir}/src/test/java,
-${basedir}代表包含pom.xml的目录,这个目录结构是maven的约定,maven的很多默认处理过程都基于这个约定,所以强烈建议使用这个约定的目录结构,参考[maven目录结构介绍](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)获取详细信息
+1. 上图表示,这个原型结构有一个pom.xml文件和一个应用资源树结构、测试资源树结构 
+2. 这是maven项目的标准布局( standard layout),即应用资源在目录${basedir}/src/main/java, 测试资源在${basedir}/src/test/java, ${basedir}代表包含pom.xml的目录 
+3. 这个目录结构是maven的约定,maven的很多默认处理过程都基于这个约定,所以强烈建议使用这个约定的目录结构,参考[maven目录结构介绍](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)获取详细信息 
 ### 5.如何编译应用
 切换到包含pom.xml的目录下,执行如下命令:
 ``` 
@@ -273,4 +274,4 @@ mvn clean
 ### 14.如何创建应用的文档
 ### 15.如何构建其他类型的项目
 ### 16.如何同时构建多个项目
-### [参考](https://maven.apache.org/guides/getting-started/index.html#How_can_Maven_benefit_my_development_process)
+### [maven官方参考](https://maven.apache.org/guides/getting-started/index.html#How_can_Maven_benefit_my_development_process)

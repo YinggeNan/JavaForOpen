@@ -9,4 +9,5 @@
 
 rootProject.name = 'JavaForOpen'
 include 'Utils'
+include 'TestExample'
 

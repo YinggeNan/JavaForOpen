@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.cbd'
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+    implementation 'org.hamcrest:hamcrest-library:2.2'
+
+}
+
+test {
+    useJUnitPlatform()
+}
